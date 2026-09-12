@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family:'Film Premieres';
+    src: url('../fontes/Film Premieres.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root{
+
+    --fonte-padrao: Arial, Helvetica, sans-serif;
+    --fonte-titulo: 'Film Premieres', arial, sans-serif
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    min-height: 115px;
+    padding-top: 40px;
+    margin: 0;
+    background-color: #5C697D;
+
+}
+
+header h1{
+    font-family: var(--fonte-titulo);
+    font-size: 5.5em;
+    font-weight: normal;
+    color: 171D1C;
+    text-align: center;
+}
+
+h2{
+    font-family: var(--fonte-padrao);
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 30px 0 10px 10px;
+}
+
+div.filmes{
+    display: grid;
+    grid-template-columns: repeat(6, 160px);
+    gap: 40px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+@media (max-width: 900px) {
+    div.filmes {
+        grid-template-columns: repeat(3, 160px);
+    }
+}
+
+@media (max-width: 600px) {
+    div.filmes {
+        grid-template-columns: repeat(2, 160px);
+    }
+}
+
+.filme{
+    width: 160px;
+    text-align: center;
+}
+
+.filme img{
+    width: 160px;
+    height: 240;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.filme figcaption{
+    margin-top: 10px;
+    font-family: var(--fonte-padrao);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.filme figcaption > a{
+    color: black;
+    text-decoration: none;
+}
+
+.filme figcaption > a:hover{
+    color: rgb(239, 82, 82);
+}
+
+
