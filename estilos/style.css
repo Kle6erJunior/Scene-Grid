@@ -2,17 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
-@font-face {
-    font-family:'Film Premieres';
-    src: url('../fontes/Film Premieres.otf') format('opentype');
-    font-weight: normal;
-}
 
 :root{
 
     --fonte-padrao: 'Jost', Arial, Helvetica, sans-serif;
-    --fonte-titulo: 'Film Premieres', arial, sans-serif
-    
 }
 
 *{
@@ -24,25 +17,7 @@ body{
     background-color: #000000;
 }
 
-header{
-    min-height: 85px;
-    padding-top: 20px;
-    margin: 0;
-    background-color: #595859;
-
-}
-
 header h1{
-    font-family: var(--fonte-titulo);
-    font-size: 5em;
-    font-weight: normal;
-    color: #F0F0F2;
-    text-align: center;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.297);
-    
-}
-
-h2{
     font-family: var(--fonte-padrao);
     font-size: 2.8em;
     font-weight: bolder;
@@ -50,9 +25,9 @@ h2{
     color: white;
 }
 
-p{
+header p{
     font-family: var(--fonte-padrao);
-    margin: 10px 0 10px 15px;
+    margin: 10px 0 20px 15px;
     font-size: 1.3em;
     color: white;
     
@@ -66,11 +41,13 @@ div.filmes{
     margin-top: 50px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) { 
     div.filmes {
         grid-template-columns: repeat(3, 160px);
     }
 }
+
+/*O @media e usado para dizer ao CSS: "Quando a tela tiver determinado tamanho, mude estas regras."*/
 
 @media (max-width: 600px) {
     div.filmes {
@@ -119,3 +96,5 @@ footer{
 footer p{
     margin: 0;
 }
+
+
