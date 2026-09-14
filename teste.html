@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo - Galeria com CSS puro</title>
+<style>
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --fonte-padrao: 'Jost', Arial, Helvetica, sans-serif;
+    --vermelho: #fa2500;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body{
+    background-color:#000;
+    font-family: var(--fonte-padrao);
+    color:#fff;
+    padding: 30px 15px;
+}
+
+h1{ text-align:center; margin-bottom: 25px; font-size: 1.8em; }
+p.legenda{ text-align:center; color:#aaa; margin-bottom: 30px; font-size:0.9em; }
+
+/* ===== VISUALIZADOR (imagem grande) ===== */
+
+.visualizador{
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16/9;
+    margin: 0 auto 35px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background:#111;
+}
+
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    transition: opacity .25s ease-in-out;
+}
+
+/* a primeira imagem aparece por padrão, antes de qualquer clique */
+.slide:first-of-type{
+    opacity: 1;
+}
+
+/* quando o link #idN é acessado, essa slide sobe de camada e fica visível */
+.slide:target{
+    opacity: 1;
+    z-index: 2;
+}
+
+/* setas de navegação, uma dentro de cada slide, apontando p/ vizinha */
+.seta{
+    position:absolute;
+    top:0;
+    bottom:0;
+    width: 60px;
+    display:flex;
+    align-items:center;
+    font-size:2.5em;
+    color:#fff;
+    text-decoration:none;
+    z-index: 3;
+    opacity:0;
+    transition: opacity .2s;
+}
+.slide:hover .seta,
+.slide:target .seta{
+    opacity: 1;
+}
+.seta.prev{ left:0; justify-content:flex-start; padding-left:10px; background:linear-gradient(90deg, rgba(0,0,0,.5), transparent); }
+.seta.next{ right:0; justify-content:flex-end; padding-right:10px; background:linear-gradient(270deg, rgba(0,0,0,.5), transparent); }
+.seta:hover{ color: var(--vermelho); }
+
+/* ===== MINIATURAS ===== */
+
+.miniaturas{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content:center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.miniaturas a{
+    display:block;
+    width: 110px;
+    aspect-ratio: 16/9;
+    border-radius: 6px;
+    overflow:hidden;
+    border: 2px solid transparent;
+    background:#222;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#555;
+    font-size:0.85em;
+    text-decoration:none;
+}
+
+.miniaturas a:hover{
+    border-color: var(--vermelho);
+}
+</style>
+</head>
+<body>
+
+<h1>2001: A Space Odyssey — Screenshots</h1>
+<p class="legenda">Clique numa miniatura, ou passe o mouse na imagem grande e use as setas &lt; &gt;</p>
+
+<div class="visualizador">
+
+    <div id="cena1" class="slide" style="background:#3a3a3a;">
+        Cena 1
+        <a href="#cena4" class="seta prev">&#10094;</a>
+        <a href="#cena2" class="seta next">&#10095;</a>
+    </div>
+
+    <div id="cena2" class="slide" style="background:#4a3a3a;">
+        Cena 2
+        <a href="#cena1" class="seta prev">&#10094;</a>
+        <a href="#cena3" class="seta next">&#10095;</a>
+    </div>
+
+    <div id="cena3" class="slide" style="background:#3a4a3a;">
+        Cena 3
+        <a href="#cena2" class="seta prev">&#10094;</a>
+        <a href="#cena4" class="seta next">&#10095;</a>
+    </div>
+
+    <div id="cena4" class="slide" style="background:#3a3a4a;">
+        Cena 4
+        <a href="#cena3" class="seta prev">&#10094;</a>
+        <a href="#cena1" class="seta next">&#10095;</a>
+    </div>
+
+</div>
+
+<div class="miniaturas">
+    <a href="#cena1">Cena 1</a>
+    <a href="#cena2">Cena 2</a>
+    <a href="#cena3">Cena 3</a>
+    <a href="#cena4">Cena 4</a>
+</div>
+
+</body>
+</html>
+</body>
+</html>
