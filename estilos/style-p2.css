@@ -82,6 +82,8 @@ main{
     z-index: 2;
 }
 
+/* ===== SETAS ===== */
+
 /* setas de navegação, uma dentro de cada slide, apontando p/ vizinha */
 .seta{
     position:absolute;
@@ -90,7 +92,7 @@ main{
     width: 60px;
     display:flex;
     align-items:center;
-    font-size:2.5em;
+    font-size: 1.1em;
     color:#fff;
     text-decoration:none;
     z-index: 3;
@@ -104,6 +106,39 @@ main{
 .seta.prev{ left:0; justify-content:flex-start; padding-left:10px; background:linear-gradient(90deg, rgba(0,0,0,.5), transparent); }
 .seta.next{ right:0; justify-content:flex-end; padding-right:10px; background:linear-gradient(270deg, rgba(0,0,0,.5), transparent); }
 .seta:hover{ color: var(--vermelho); }
+
+/* esconde o checkbox de verdade (mas continua funcional) */
+.toggle-setas{
+    display: none;
+}
+
+/* área invisível que cobre a imagem inteira, capturando o toque */
+.area-toque{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* setas ficam escondidas e "intocáveis" por padrão */
+.seta{
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3; /* acima do .area-toque, pra dar pra clicar nelas quando aparecem */
+    transition: opacity .2s;
+}
+
+/* mouse: continua mostrando no hover, sem precisar tocar */
+.slide:hover .seta{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* touch: mostra quando o checkbox correspondente está marcado */
+.toggle-setas:checked ~ .seta{
+    opacity: 1;
+    pointer-events: auto;
+}
 
 /* ===== MINIATURAS ===== */
 
@@ -140,5 +175,19 @@ main{
 }
 
 .miniaturas a:hover{
+    border-color: var(--vermelho);
+}
+
+/* ===== CONTORNO VERMELHO DAS MINIATURAS ===== */
+
+body:has(#cena1:target) .miniaturas a:nth-child(1),
+body:has(#cena2:target) .miniaturas a:nth-child(2),
+body:has(#cena3:target) .miniaturas a:nth-child(3),
+body:has(#cena4:target) .miniaturas a:nth-child(4){
+    border-color: var(--vermelho);
+}
+
+/* antes de qualquer clique, destaca a primeira miniatura */
+body:not(:has(.slide:target)) .miniaturas a:nth-child(1){
     border-color: var(--vermelho);
 }
