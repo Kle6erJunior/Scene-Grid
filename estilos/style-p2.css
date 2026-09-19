@@ -2,14 +2,11 @@
 
 
 :root{
-
     --fonte-padrao: 'Jost', Arial, Helvetica, sans-serif;
+    --vermelho: #fa2500;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-}
+*{ margin:0; padding:0; box-sizing:border-box; }
 
 body{
     background-color: #000000;
@@ -29,6 +26,7 @@ article p{
     font-size: 0.8;
     font-weight: normal;
     padding: 5px 10px 10px 5px;
+    margin-bottom: 5px;
 }
 
 main{
@@ -38,3 +36,109 @@ main{
     text-align: justify;
 }
 
+/* ===== VISUALIZADOR (imagem grande) ===== */
+
+.visualizador{
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    margin: 0 auto 35px auto;
+    padding: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    background:#111;
+}
+
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    transition: opacity .25s ease-in-out;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* a primeira imagem aparece por padrão, antes de qualquer clique */
+.slide:first-of-type{
+    opacity: 1;
+}
+
+/* quando o link #idN é acessado, essa slide sobe de camada e fica visível */
+.slide:target{
+    opacity: 1;
+    z-index: 2;
+}
+
+/* setas de navegação, uma dentro de cada slide, apontando p/ vizinha */
+.seta{
+    position:absolute;
+    top:0;
+    bottom:0;
+    width: 60px;
+    display:flex;
+    align-items:center;
+    font-size:2.5em;
+    color:#fff;
+    text-decoration:none;
+    z-index: 3;
+    opacity:0;
+    transition: opacity .2s;
+}
+.slide:hover .seta,
+.slide:target .seta{
+    opacity: 1;
+}
+.seta.prev{ left:0; justify-content:flex-start; padding-left:10px; background:linear-gradient(90deg, rgba(0,0,0,.5), transparent); }
+.seta.next{ right:0; justify-content:flex-end; padding-right:10px; background:linear-gradient(270deg, rgba(0,0,0,.5), transparent); }
+.seta:hover{ color: var(--vermelho); }
+
+/* ===== MINIATURAS ===== */
+
+.miniaturas{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content:center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.miniaturas a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.miniaturas a{
+    display:block;
+    width: 110px;
+    aspect-ratio: 16/9;
+    border-radius: 6px;
+    overflow:hidden;
+    border: 2px solid transparent;
+    background:#222;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#555;
+    font-size:0.85em;
+    text-decoration:none;
+}
+
+.miniaturas a:hover{
+    border-color: var(--vermelho);
+}
