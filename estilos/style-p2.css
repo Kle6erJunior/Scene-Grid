@@ -12,6 +12,7 @@ body{
     background-color: #000000;
 }
 
+
 h1{
     color: white;
     font-family: var(--fonte-padrao);
@@ -92,17 +93,14 @@ main{
     width: 60px;
     display:flex;
     align-items:center;
-    font-size: 1.1em;
+    font-size: 2.5em;
     color:#fff;
     text-decoration:none;
     z-index: 3;
     opacity:0;
     transition: opacity .2s;
 }
-.slide:hover .seta,
-.slide:target .seta{
-    opacity: 1;
-}
+
 .seta.prev{ left:0; justify-content:flex-start; padding-left:10px; background:linear-gradient(90deg, rgba(0,0,0,.5), transparent); }
 .seta.next{ right:0; justify-content:flex-end; padding-right:10px; background:linear-gradient(270deg, rgba(0,0,0,.5), transparent); }
 .seta:hover{ color: var(--vermelho); }
