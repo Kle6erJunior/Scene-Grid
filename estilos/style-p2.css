@@ -12,6 +12,25 @@ body{
     background-color: #000000;
 }
 
+header{
+    max-height: 170px;
+    background-color: black;
+    padding: 10px 0 10px 0;
+}
+
+header > nav > a{
+    text-decoration: underline;
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 20px;
+    padding: 20px 7px 15px 15px;
+    transition-duration: 0.3
+
+}
+
+nav > a:hover{
+    color: #595859;
+}
 
 h1{
     color: white;
@@ -188,4 +207,18 @@ body:has(#cena4:target) .miniaturas a:nth-child(4){
 /* antes de qualquer clique, destaca a primeira miniatura */
 body:not(:has(.slide:target)) .miniaturas a:nth-child(1){
     border-color: var(--vermelho);
+}
+
+footer{
+    background-color: #595859;
+    color: #F0F0F2;
+    text-align: center;
+    font-family: var(--fonte-padrao);
+    font-size: 0.8em;
+    padding: 1.5px;
+    margin-top: 50px;
+}
+
+footer p{
+    margin: 0;
 }

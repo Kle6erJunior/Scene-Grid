@@ -17,15 +17,36 @@ body{
     background-color: #000000;
 }
 
-header h1{
+header{
+    max-height: 170px;
+    background-color: #000000;
+    padding: 10px 0 10px 0;
+}
+
+header > nav > a{
+    text-decoration: underline;
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 20px;
+    padding: 20px 7px 10px 15px;
+    transition-duration: 0.3
+
+}
+
+nav > a:hover{
+    color: #595859;
+}
+
+h1{
     font-family: var(--fonte-padrao);
     font-size: 3.8em;
     font-weight: bold;
-    margin: 30px 40px 10px 15px;
+    margin: 25px 40px 10px 15px;
     color: white;
 }
 
-header p{
+
+p{
     font-family: var(--fonte-padrao);
     margin: 10px 0 20px 15px;
     font-size: 1.3em;
