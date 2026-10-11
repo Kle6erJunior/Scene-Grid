@@ -6,7 +6,7 @@
 :root{
 
     --fonte-padrao: 'Jost', Arial, Helvetica, sans-serif;
-    --cor-prinpal: #1F262D, #181D22, #14181C;
+    --cor-principal: #1F262D, #181D22, #14181C;
     --cor-header: #14181C;
 }
 
@@ -16,7 +16,7 @@
 }
 
 body{
-    background-image: linear-gradient(to bottom, var(--cor-prinpal));
+    background-image: linear-gradient(to bottom, var(--cor-principal));
 }
 
 header{
