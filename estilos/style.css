@@ -62,7 +62,7 @@ div.filmes{
     margin-top: 50px;
 }
 
-@media (max-width: 900px) { 
+@media (max-width: 1200px) { 
     div.filmes {
         grid-template-columns: repeat(3, 160px);
     }
