@@ -78,6 +78,13 @@ main{
     background:#111;
 }
 
+@media (max-width: 600px) { 
+    .visualizador {
+        max-width: 900px;
+        aspect-ratio: 16/9;
+    }
+}
+
 .slide{
     position: absolute;
     inset: 0;
