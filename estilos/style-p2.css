@@ -69,8 +69,8 @@ main{
 .visualizador{
     position: relative;
     width: 100%;
-    max-width: 900px;
-    aspect-ratio: 16/9;
+    max-width: 950px;
+    aspect-ratio: 19/8;
     margin: 0 auto 35px auto;
     padding: 25px;
     border-radius: 10px;
