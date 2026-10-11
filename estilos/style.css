@@ -14,7 +14,7 @@
 }
 
 body{
-    background-color: #000000;
+    background-image: linear-gradient(#1F262D, #181D22, #14181C, to bottom);
 }
 
 header{
