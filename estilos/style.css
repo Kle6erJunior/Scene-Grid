@@ -6,6 +6,8 @@
 :root{
 
     --fonte-padrao: 'Jost', Arial, Helvetica, sans-serif;
+    --cor-prinpal: #1F262D, #181D22, #14181C;
+    --cor-header: #14181C;
 }
 
 *{
@@ -14,12 +16,12 @@
 }
 
 body{
-    background-image: linear-gradient(#1F262D, #181D22, #14181C, to bottom);
+    background-image: linear-gradient(to bottom, var(--cor-prinpal));
 }
 
 header{
     max-height: 170px;
-    background-color: #000000;
+    background-color: var(--cor-header);
     padding: 10px 0 10px 0;
 }
 

@@ -3,18 +3,20 @@
 
 :root{
     --fonte-padrao: 'Jost', Arial, Helvetica, sans-serif;
+    --cor-prinpal: #1F262D, #181D22, #14181C;
+    --cor-header: #14181C;
     --vermelho: #fa2500;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 
 body{
-    background-color: #000000;
+    background-image: linear-gradient(to bottom, var(--cor-prinpal));
 }
 
 header{
     max-height: 170px;
-    background-color: black;
+    background-color: var(--cor-header);
     padding: 10px 0 10px 0;
 }
 
