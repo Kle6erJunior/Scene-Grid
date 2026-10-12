@@ -45,6 +45,7 @@ h1{
 @media (max-width: 700px) {
     h1 {
         font-size: 2em;
+        padding: 15px;
     }
 }
 
@@ -55,6 +56,12 @@ article p{
     font-weight: normal;
     padding: 5px 10px 10px 25px;
     margin-bottom: 5px;
+}
+
+@media (max-width: 600px) { 
+    article p {
+        padding: 5px 10px 10px 5px;
+    }
 }
 
 main{
