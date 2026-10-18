@@ -15,6 +15,10 @@
     padding: 0;
 }
 
+html{
+    background-color: #14181C;
+}
+
 body{
     background-image: linear-gradient(to bottom, var(--cor-principal));
 }
@@ -31,7 +35,7 @@ header > nav > a{
     font-family: var(--fonte-padrao);
     font-size: 20px;
     padding: 20px 7px 10px 15px;
-    transition-duration: 0.3
+    transition-duration: 0.3s;
 
 }
 
@@ -45,6 +49,7 @@ h1{
     font-weight: bold;
     margin: 25px 40px 10px 15px;
     color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.705);
 }
 
 
@@ -85,9 +90,10 @@ div.filmes{
 
 .filme img{
     width: 160px;
-    height: 240;
+    height: 240px;
     object-fit: cover;
     border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.638);
 }
 
 .filme figcaption{
