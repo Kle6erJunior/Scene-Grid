@@ -54,9 +54,9 @@ h1{
 }
 
 article p{ 
-    color: white;
+    color: #b0bac6;
     font-family: var(--fonte-padrao);
-    font-size: 0.8;
+    font-size: 0.9;
     font-weight: normal;
     padding: 5px 10px 10px 25px;
     margin-bottom: 5px;
@@ -89,6 +89,7 @@ main{
     background:#111;
 }
 
+/*O @media e usado para dizer ao CSS: "Quando a tela tiver determinado tamanho, mude estas regras."*/
 @media (max-width: 600px) { 
     .visualizador {
         max-width: 900px;
@@ -240,7 +241,7 @@ footer{
     color: #F0F0F2;
     text-align: center;
     font-family: var(--fonte-padrao);
-    font-size: 0.4em;
+    font-size: 0.8em;
     padding: 1.5px;
     margin-top: 50px;
 }
