@@ -10,6 +10,10 @@
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 
+html{
+    background-color: #14181C;
+}
+
 body{
     background-image: linear-gradient(to bottom, var(--cor-principal));
 }
