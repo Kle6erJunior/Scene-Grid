@@ -45,8 +45,8 @@ nav > a:hover{
 
 h1{
     font-family: var(--fonte-padrao);
-    font-size: clamp(2.2rem, 6vw, 3.8rem);
-    letter-spacing: -1px;
+    font-size: clamp(2.2rem, 6vw, 3.8rem); /*clamp(mínimo, ideal, máximo)*/
+    letter-spacing: -1px; /*Controla o espaço entre as letras.*/
     font-weight: bold;
     margin: 25px 40px 10px 15px;
     color: white;
@@ -73,8 +73,9 @@ div.filmes{
 
 div.filmes{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 40px 24px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /*minmax(160px, 1fr) define o tamanho de cada coluna como “no mínimo 160px, no máximo 1fr”. O fr é uma fração do espaço livre: 1fr significa “uma parte do que sobrar”.
+    repeat(auto-fill, ...) manda o navegador criar quantas colunas couberem.*/
+    gap: 40px 24px; /*o primeiro é o espaço entre linhas (vertical) e o segundo é o espaço entre colunas (horizontal).*/
     max-width: 1300px;
     margin: 50px auto 0 auto;
     padding: 0 20px;
@@ -94,12 +95,12 @@ div.filmes{
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.525);
-    transition: transform .25s ease, box-shadow .25s ease;
+    transition: transform .25s ease, box-shadow .25s ease; /*ease é a curva de velocidade: começa um pouco mais rápido e desacelera no final*/
 }
 
 .filme:hover img{
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 12px 24px rgba(0,0,0,.7);
+    transform: translateY(-6px) scale(1.03); /* move o pôster 6px para cima (valores negativos em Y sobem) */
+    box-shadow: 0 12px 24px rgba(0,0,0,.7); /* aumenta o tamanho em 3% */
 }
 
 .filme figcaption{
