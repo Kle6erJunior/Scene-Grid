@@ -43,7 +43,7 @@ h1{
     font-family: var(--fonte-padrao);
     font-weight: bold;
     font-size: 3.2em;
-    padding: 15px 15px 15px 25px;
+    padding: 15px 15px 15px 5px;
 }
 
 @media (max-width: 700px) {
@@ -58,8 +58,9 @@ article p{
     font-family: var(--fonte-padrao);
     font-size: 0.9;
     font-weight: normal;
-    padding: 5px 10px 10px 25px;
+    padding: 5px 10px 10px 5px;
     margin-bottom: 5px;
+    text-align: justify;
 }
 
 @media (max-width: 600px) { 
@@ -69,24 +70,21 @@ article p{
 }
 
 main{
-    min-width: 300px;
-    max-width: 1000px;
-    margin: right;
-    text-align: justify;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* ===== VISUALIZADOR (imagem grande) ===== */
 
 .visualizador{
     position: relative;
-    width: 100%;
-    max-width: 950px;
-    aspect-ratio: 19/8;
-    margin: 0 auto 35px auto;
-    padding: 25px;
-    border-radius: 10px;
+    aspect-ratio: 19 / 8;
+    margin: 0 0 14px 0;
+    border-radius: 14px;
     overflow: hidden;
-    background:#111;
+    background: #0d1014;
+    box-shadow: 0 20px 50px rgba(0,0,0,.55);
 }
 
 /*O @media e usado para dizer ao CSS: "Quando a tela tiver determinado tamanho, mude estas regras."*/
@@ -109,7 +107,15 @@ main{
     font-weight: bold;
     color: #333;
     transition: opacity .25s ease-in-out;
+    pointer-events: none;
+    scroll-margin-top: 80px;
 }
+
+.slide:first-of-type,
+.slide:target{
+    pointer-events: auto;
+}
+
 
 .slide img{
     width: 100%;
@@ -133,23 +139,34 @@ main{
 
 /* setas de navegação, uma dentro de cada slide, apontando p/ vizinha */
 .seta{
-    position:absolute;
-    top:0;
-    bottom:0;
-    width: 60px;
-    display:flex;
-    align-items:center;
-    font-size: 2.5em;
-    color:#fff;
-    text-decoration:none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    background: rgba(0,0,0,.45);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
     z-index: 3;
-    opacity:0;
-    transition: opacity .2s;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s, background .2s;
 }
 
-.seta.prev{ left:0; justify-content:flex-start; padding-left:10px; background:linear-gradient(90deg, rgba(0,0,0,.5), transparent); }
-.seta.next{ right:0; justify-content:flex-end; padding-right:10px; background:linear-gradient(270deg, rgba(0,0,0,.5), transparent); }
-.seta:hover{ color: var(--vermelho); }
+.seta.prev{ left: 14px; }
+.seta.next{ right: 14px; }
+.seta:hover{ background: var(--vermelho); }
+
+@media (max-width: 600px){
+    .seta{ width: 40px; height: 40px; font-size: 1.1rem; }
+}
 
 /* esconde o checkbox de verdade (mas continua funcional) */
 .toggle-setas{
@@ -224,16 +241,20 @@ main{
 
 /* ===== CONTORNO VERMELHO DAS MINIATURAS ===== */
 
-body:has(#cena1:target) .miniaturas a:nth-child(1),
-body:has(#cena2:target) .miniaturas a:nth-child(2),
-body:has(#cena3:target) .miniaturas a:nth-child(3),
-body:has(#cena4:target) .miniaturas a:nth-child(4){
-    border-color: var(--vermelho);
-}
-
+body:has(#cena1:target)  .miniaturas a:nth-child(1),
+body:has(#cena2:target)  .miniaturas a:nth-child(2),
+body:has(#cena3:target)  .miniaturas a:nth-child(3),
+body:has(#cena4:target)  .miniaturas a:nth-child(4),
+body:has(#cena5:target)  .miniaturas a:nth-child(5),
+body:has(#cena6:target)  .miniaturas a:nth-child(6),
+body:has(#cena7:target)  .miniaturas a:nth-child(7),
+body:has(#cena8:target)  .miniaturas a:nth-child(8),
+body:has(#cena9:target)  .miniaturas a:nth-child(9),
+body:has(#cena10:target) .miniaturas a:nth-child(10),
 /* antes de qualquer clique, destaca a primeira miniatura */
 body:not(:has(.slide:target)) .miniaturas a:nth-child(1){
     border-color: var(--vermelho);
+    opacity: 1;
 }
 
 footer{
