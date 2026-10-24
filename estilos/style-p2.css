@@ -212,6 +212,14 @@ main{
     margin: 0 auto;
 }
 
+@media (max-width: 500px){
+    .miniaturas{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+    }
+}
+
 .miniaturas a img{
     width: 100%;
     height: 100%;
