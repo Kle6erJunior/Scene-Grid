@@ -212,11 +212,12 @@ main{
     margin: 0 auto;
 }
 
-@media (max-width: 500px){
+@media (max-width: 400px){
     .miniaturas{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 5px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px 12px;
+        margin: 5px auto 0 auto;
     }
 }
 
