@@ -48,7 +48,7 @@ h1{
     font-size: clamp(2.2rem, 6vw, 3.8rem); /*clamp(mínimo, ideal, máximo)*/
     letter-spacing: -1px; /*Controla o espaço entre as letras.*/
     font-weight: bold;
-    margin: 25px 40px 10px 15px;
+    margin: 25px 40px 5px 15px;
     color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.705);
 }
@@ -56,7 +56,7 @@ h1{
 
 p.subtitulo{
     font-family: var(--fonte-padrao);
-    margin: 10px 0 20px 15px;   
+    margin: 2px 0 20px 15px;   
     color: #b0bac6;        
     font-size: 1.2em;
     max-width: 600px;
@@ -132,5 +132,3 @@ footer{
 footer p{
     margin: 0;
 }
-
-
