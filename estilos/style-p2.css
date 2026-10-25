@@ -69,6 +69,15 @@ article p{
     }
 }
 
+p > a{
+    text-decoration: underline;
+    color: #b0bac6;
+}
+
+p > a:hover{
+    color: #fa2500;
+}
+
 main{
     max-width: 960px;
     margin: 0 auto;

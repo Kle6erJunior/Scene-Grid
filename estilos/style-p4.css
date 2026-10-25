@@ -96,31 +96,23 @@ article{
 
 h1#legenda{
     padding: 15px 5px 5px 8px;
-    margin: 30px 10px 10px 2px;
+    margin: 20px 10px 10px 2px;
     font-size: 1.5em;
     font-weight: normal;
 }
 
-div.filmes{
+.filmes{
     display: grid;
-    grid-template-columns: repeat(6, 160px);
-    gap: 40px;
-    justify-content: center;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, 160px);
+    justify-content: start;
+    gap: 40px 24px;
+    margin: 30px 0 0 0;
+    padding: 0 40px;
 }
 
-div.filmes{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /*minmax(160px, 1fr) define o tamanho de cada coluna como “no mínimo 160px, no máximo 1fr”. O fr é uma fração do espaço livre: 1fr significa “uma parte do que sobrar”.
-    repeat(auto-fill, ...) manda o navegador criar quantas colunas couberem.*/
-    gap: 40px 24px; /*o primeiro é o espaço entre linhas (vertical) e o segundo é o espaço entre colunas (horizontal).*/
-    max-width: 1300px;
-    margin: 50px auto 0 auto;
-    padding: 0 20px;
+@media (max-width: 600px){
+    h1#legenda, .filmes{ padding: 0 20px; }
 }
-
-.filme{ width: auto; }
-.filme img{ width: 100%; }   /* ocupa a coluna inteira */
 
 .filme{
     width: 160px;
@@ -128,17 +120,18 @@ div.filmes{
 }
 
 .filme img{
+    display: block;
     width: 160px;
-    aspect-ratio: 2 / 3; /*garante que todos os pôsteres tenham exatamente a mesma proporção*/
+    aspect-ratio: 2 / 3;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.525);
-    transition: transform .25s ease, box-shadow .25s ease; /*ease é a curva de velocidade: começa um pouco mais rápido e desacelera no final*/
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .filme:hover img{
-    transform: translateY(-6px) scale(1.03); /* move o pôster 6px para cima (valores negativos em Y sobem) */
-    box-shadow: 0 12px 24px rgba(0,0,0,.7); /* aumenta o tamanho em 3% */
+    transform: translateY(-6px) scale(1.03); 
+    box-shadow: 0 12px 24px rgba(0,0,0,.7); 
 }
 
 .filme figcaption{
