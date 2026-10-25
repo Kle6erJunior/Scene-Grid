@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{
+
+    --fonte-padrao: 'Jost', Arial, Helvetica, sans-serif;
+    --cor-principal: #1F262D, #181D22, #14181C;
+    --cor-header: #14181C;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: #14181C;
+    scroll-behavior: smooth; /* rolagem suave */}
+
+body{
+    background-image: linear-gradient(to bottom, var(--cor-principal));
+}
+
+header{
+    max-height: 170px;
+    background-color: var(--cor-header);
+    padding: 10px 0 10px 0;
+}
+
+header > nav > a{
+    text-decoration: underline;
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 20px;
+    padding: 20px 7px 10px 15px;
+    transition-duration: 0.3s;
+
+}
+
+nav > a:hover{
+    color: #595859;
+}
+
+h1{
+    font-family: var(--fonte-padrao);
+    font-size: clamp(2rem, 3vw, 3.2rem); /*clamp(mínimo, ideal, máximo)*/
+    letter-spacing: -1px; /*Controla o espaço entre as letras.*/
+    font-weight: bold;
+    margin: 25px 40px 5px 15px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.705);
+}
+
+ul{
+    color: #b0bac6;
+    margin: 15px;
+    padding: 15px;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+ul > a{
+    text-decoration: none;
+    color: #b0bac6;
+}
+
+ul > a:hover{
+    color: #fa2500;
+}
+
+footer{
+    background-color: #14181c69;
+    color: #F0F0F2;
+    text-align: center;
+    font-family: var(--fonte-padrao);
+    font-size: 0.8em;
+    padding: 1.5px;
+    margin-top: 110px;
+}
+
+footer p{
+    margin: 0px;
+}
