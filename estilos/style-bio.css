@@ -59,9 +59,6 @@ article{
 }
 
 .hero{
-    background-image:
-        linear-gradient(90deg, rgba(20,24,28,.97) 0%, rgba(20,24,28,.75) 55%, rgba(20,24,28,.55) 100%),
-        url("../diretores/imagens/billywilder.jpg");
     background-size: cover;
     background-position: center;
 }
