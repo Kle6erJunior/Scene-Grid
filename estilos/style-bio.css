@@ -50,6 +50,13 @@ h1{
     color: white;
 }
 
+@media (max-width: 600px){
+    h1{
+        font-size: 1.8em;
+        padding: 15px;;
+    }
+}
+
 h2{
     color: whitesmoke;
 }
